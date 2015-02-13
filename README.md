@@ -67,7 +67,7 @@ grunt.initConfig({
 
 ## Contributing
 
-Issues and Pull-requests are absolutely welcome. If you want to submit a patch, please make sure that you follow this simple rule:
+Issues and Pull-requests are welcome. If you want to submit a patch, please make sure that you follow this simple rule:
 
 > All code in any code-base should look like a single person typed it, no matter how
 many people contributed. — [idiomatic.js](https://github.com/rwldrn/idiomatic.js/)
