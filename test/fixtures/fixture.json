@@ -1,0 +1,11 @@
+{
+    "foo": ["Fischers Fritz fischt frische Fische,", "frische Fische fischt Fischers Fritz."],
+    "bar": {
+        "qux": "Wenn Hessen in Essen Essen essen,",
+        "flux": {
+            "capacitor": "Mähen Äbte Heu?",
+            "DeLorean": "Äbte mähen nie Heu!"
+        }
+    },
+    "nothing": null
+}

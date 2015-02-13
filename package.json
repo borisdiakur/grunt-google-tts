@@ -1,0 +1,45 @@
+{
+  "name": "grunt-google-tts",
+  "version": "0.0.0",
+  "description": "Parses json files and loads audio assets via google text to speech api.",
+  "author": "Boris Diakur <contact@borisdiakur.com> (https://github.com/borisdiakur)",
+  "scripts": {
+    "test": "mocha test && grunt",
+    "mocha": "mocha --reporter nyan test",
+    "jshint": "grunt hint",
+    "audit": "grunt audit",
+    "istanbul": "rm -rf coverage && ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report html && open coverage/grunt-google-tts/tasks/google_tts.js.html",
+    "coveralls": "rm -rf coverage && ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  },
+  "homepage": "https://github.com/borisdiakur/grunt-google-tts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/borisdiakur/grunt-google-tts"
+  },
+  "bugs": {
+    "url": "https://github.com/borisdiakur/grunt-google-tts/issues"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "coveralls": "~2.11.0",
+    "grunt": "~0.4.5",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-nsp-package": "~0.0.5",
+    "hyphenation.de": "^0.2.1",
+    "istanbul": "~0.2.11",
+    "mocha": "~2.0.0",
+    "mocha-lcov-reporter": "0.0.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "private": false,
+  "main": "tasks/google_tts.js",
+  "keywords": "tts, text-to-speech, speech, google, translate",
+  "licenses": "MIT",
+  "readmeFilename": "README.md"
+}
