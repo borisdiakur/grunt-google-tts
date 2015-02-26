@@ -10,10 +10,6 @@ module.exports = function (grunt) {
 
         // Configuration to be run (and then tested).
         'google_tts': {
-            options: {
-                lang: 'de',
-                downloadDir: 'test/downloads'
-            },
             files: ['test/fixtures/**/*.json']
         }
     });

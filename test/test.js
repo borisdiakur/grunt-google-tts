@@ -20,9 +20,31 @@ describe('grunt-google-tts', function () {
             });
         });
 
-        it('should write files', function (done) {
+        it('should write files with lang de', function (done) {
             require('../gruntfile.js')(grunt);
-            grunt.tasks('google_tts', null, function () {
+            grunt.tasks('google_tts', {lang: 'de', downloadDir: 'test/downloads'}, function () {
+                fs.readdir(path.join(__dirname, './downloads'), function (err, files) {
+                    assert.ifError(err);
+                    assert.equal(files.length, 6);
+
+                    var checkCnt = files.length;
+                    files.forEach(function (file) {
+                        fs.stat(path.join(__dirname, './downloads', file), function (err, stats) {
+                            assert.ifError(err);
+                            assert.ok(stats.size > 4);
+                            checkCnt--;
+                            if (checkCnt === 0) {
+                                done();
+                            }
+                        });
+                    });
+                });
+            });
+        });
+
+        it('should write files with lang en', function (done) {
+            require('../gruntfile.js')(grunt);
+            grunt.tasks('google_tts', {downloadDir: 'test/downloads'}, function () {
                 fs.readdir(path.join(__dirname, './downloads'), function (err, files) {
                     assert.ifError(err);
                     assert.equal(files.length, 6);

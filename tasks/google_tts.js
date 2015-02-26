@@ -11,15 +11,17 @@ module.exports = function (grunt) {
     grunt.registerMultiTask('google_tts', 'Parses json files and loads audio assets via google text to speech api', function () {
 
         var done = this.async(),
-            options = this.options({}),
-            downloadDir = options.downloadDir || 'downloads',
+            options = this.options({
+                lang: grunt.option('lang') || 'en',
+                downloadDir: grunt.option('downloadDir') || 'downloads'
+            }),
             textArr = [],
             self = this,
             doneCnt;
 
-        exec('mkdir -p ' + downloadDir, function (err) {
+        exec('mkdir -p ' + options.downloadDir, function (err) {
             if (err) {
-                throw err;
+                return done(err);
             }
 
             self.files.forEach(function (f) {
@@ -40,11 +42,11 @@ module.exports = function (grunt) {
 
             function requestData(text, callback) {
                 var fileName = text + '.mp3',
-                    file = fs.createWriteStream(path.join(downloadDir, fileName)),
+                    file = fs.createWriteStream(path.join(options.downloadDir, fileName)),
                     ur = url.parse('translate.google.com/translate_tts', true);
 
                 ur.query = {
-                    'tl': (options.lang || 'en'),
+                    'tl': options.lang,
                     'q': text
                 };
 
@@ -86,9 +88,9 @@ module.exports = function (grunt) {
             textArr.forEach(function (text) {
                 requestData(text, function (err, data) {
                     if (err) {
-                        throw err;
+                        return done(err);
                     } else if (!data) {
-                        throw new Error('No data received!');
+                        return done(new Error('No data received!'));
                     } else if (data) {
                         doneCnt--;
                         if (doneCnt === 0) {
