@@ -39,7 +39,7 @@
   },
   "private": false,
   "main": "tasks/google_tts.js",
-  "keywords": "tts, text-to-speech, speech, google, translate",
+  "keywords": "gruntplugin, tts, text-to-speech, speech, google, translate",
   "licenses": "MIT",
   "readmeFilename": "README.md"
 }
