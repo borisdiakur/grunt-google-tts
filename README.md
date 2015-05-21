@@ -3,7 +3,7 @@
 > Extracts values of type string from json files and loads audio assets via google text to speech api.
 
 [![Build Status](https://api.travis-ci.org/borisdiakur/grunt-google-tts.png?branch=master)](https://travis-ci.org/borisdiakur/grunt-google-tts)
-[![Coverage Status](https://img.shields.io/coveralls/borisdiakur/grunt-google-tts.svg)](https://coveralls.io/r/borisdiakur/grunt-google-tts)
+[![Coverage Status](https://coveralls.io/repos/borisdiakur/grunt-google-tts/badge.svg?branch=master)](https://coveralls.io/r/borisdiakur/grunt-google-tts?branch=master)
 [![Dependency Status](https://gemnasium.com/borisdiakur/grunt-google-tts.svg)](https://gemnasium.com/borisdiakur/grunt-google-tts)
 
 [![NPM](https://nodei.co/npm/grunt-google-tts.png?downloads=true)](https://nodei.co/npm/grunt-google-tts/)
